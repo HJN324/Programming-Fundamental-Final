@@ -1,0 +1,54 @@
+def main_menu():
+    print("Menu:")
+    print("1. Find and item")
+    print("2. Add a device")
+
+
+while True: 
+    main_menu()
+    choice = input("enter your choice: ")
+    if choice == "1":
+        data = [
+            {"Item": "Keys", "Location it could be Bedroom": "Night Stand", "Location it could be Basement": "Couch", "Location it could be kitchen": "Counter", },
+            {"Item": "Wacth", "Location it could be Bedroom": "Bed", "Location it could be Basement": "Counter", "Location it could be kitchen": "Sink", },
+            {"Item": "Wallet", "Location it could be Bedroom": "Bathroom", "Location it could be Basement": "Pool Table", "Location it could be kitchen": "Island",}
+]
+        def add_row(Item, Location_it_could_be_Bedroom, Location_it_could_be_Basement, Location_it_could_be_kitchen,):
+
+                new_entry = {
+            "Item": Item,
+            "Location_it_could_be_Bedroom":Location_it_could_be_Bedroom,
+            "Location_it_could_be_Basement": Location_it_could_be_Basement,
+            "Location_it_could_be_kitchen": Location_it_could_be_kitchen
+         }
+                data.append(new_entry)
+
+        def search_by_index(index):
+            if 0 <= index < len(data):
+                entry = data[index]
+                return entry["Item"], entry["Location_it_could_be_Bedroom"], entry["Location_it_could_be_kitchen"]
+            else:
+                return "Index out of range"
+        while True:
+            Item = input("Item: ")
+            Location_it_could_be_Bedroom = input("Location it could be Bedroom:")
+            Location_it_could_be_Basement = input("Location it could be Basement: ")
+            Location_it_could_be_kitchen = input("Location it could be kitchen: ")
+    
+
+            add_row(Item,  Location_it_could_be_Bedroom,  Location_it_could_be_Basement,  Location_it_could_be_kitchen, )
+
+            more = input("Do you want to add another entry? (yes/no): ")
+            if more.lower() != 'yes':
+                break
+
+        for i, entry in enumerate(data):
+            print(f"Index {i}: {entry}")
+
+        index_to_search = input("Enter the index to search: ")
+        result = search_by_index(index_to_search)
+        print(f"search result: {result}")
+
+    if choice == "2":
+            print("What`m device would you like to add?: ")
+
