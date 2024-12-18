@@ -1,6 +1,6 @@
 def main_menu():
     print("Menu:")
-    print("1. Find and item")
+    print("1. Find an item")
     print("2. Add a device")
 
 
@@ -9,8 +9,8 @@ while True:
     choice = input("enter your choice: ")
     if choice == "1":
         data = [
-            {"Item": "Keys", "Location it could be Bedroom": "Night Stand", "Location it could be Basement": "Couch", "Location it could be kitchen": "Counter", },
-            {"Item": "Wacth", "Location it could be Bedroom": "Bed", "Location it could be Basement": "Counter", "Location it could be kitchen": "Sink", },
+            {"Item": "Keys", "Location it could be Bedroom": "Night Stand", "Location it could be Basement": "Couch", "Location it could be kitchen": "Counter", }, 
+            {"Item": "Watch", "Location it could be Bedroom": "Bed", "Location it could be Basement": "Counter", "Location it could be kitchen": "Sink", },
             {"Item": "Wallet", "Location it could be Bedroom": "Bathroom", "Location it could be Basement": "Pool Table", "Location it could be kitchen": "Island",}
 ]
         def add_row(Item, Location_it_could_be_Bedroom, Location_it_could_be_Basement, Location_it_could_be_kitchen,):
@@ -49,6 +49,12 @@ while True:
         result = search_by_index(index_to_search)
         print(f"search result: {result}")
 
-    if choice == "2":
-            print("What`m device would you like to add?: ")
+    elif choice == "2":
+        Item = input("Item: ")
+        It_could_be_in_Bedroom = input("It could be in Bedroom: ")
+        It_could_be_in_Basement = input("It could be in Basement: ")
+        It_could_be_in_Kitchen = input("It could be in Kitchen: ")
+    
+        
+        add_row(Item, It_could_be_in_Bedroom, It_could_be_in_Basement, It_could_be_in_Kitchen)
 
